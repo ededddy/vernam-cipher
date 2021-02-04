@@ -7,12 +7,21 @@ const Footer: React.FC<{}> = () => {
   return (
     <Wrapper>
       <p>
-        Made By <a href="https://www.github.com/ededddy">Eddy</a>
+        Made By{" "}
+        <a
+          href="https://www.github.com/ededddy"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Eddy
+        </a>
       </p>
       <IconButton
         href="https://www.github.com/ededddy"
         size="medium"
         aira-label="GitHub user ededddy"
+        rel="noreferrer"
+        target="_blank"
       >
         <GitHub />
       </IconButton>
@@ -20,6 +29,8 @@ const Footer: React.FC<{}> = () => {
         href="mailto:eddylei070300@gmail.com"
         size="medium"
         aria-label="Email"
+        rel="noreferrer"
+        target="_blank"
       >
         <Email />
       </IconButton>

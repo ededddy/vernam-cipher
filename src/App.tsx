@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Wrapper, FlexWrapper, AppTitle } from "./App.styles";
 import { AppBar, Tab, Tabs, Button, Divider } from "@material-ui/core";
+import GitHubIcon from "@material-ui/icons/GitHub";
 import TabPanel from "./TabPanel/TabPanel";
 import ResultPanel from "./ResultPanel/ResultPanel";
 import CustomForm from "./CustomForm/CustomForm";
@@ -36,7 +37,7 @@ const App = () => {
     if (/\s/g.test(plainText) || /[^\w\s]|_+/g.test(plainText))
       return setErrorFlag(true);
     return cipherKeyValues.length === 0 ||
-      plainText.length === cipherKeyValues.split(" ").length
+      plainText.length === cipherKeyValues.trim().split(" ").length
       ? setErrorFlag(false)
       : setErrorFlag(true);
   }, [plainText, cipherKeyValues]);
@@ -91,7 +92,20 @@ const App = () => {
   return (
     <Wrapper>
       <AppBar position="static" color="transparent">
-        <AppTitle>Vernam Cipher</AppTitle>
+        <FlexWrapper
+          style={{ alignItems: "center", justifyContent: "space-between" }}
+        >
+          <AppTitle>Vernam Cipher</AppTitle>
+          <a
+            style={{ margin: "5px" }}
+            href="https://github.com/ededddy/vernam-cipher"
+            aria-label="GitHub Repository"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <GitHubIcon fontSize="large" style={{ color: "black" }} />
+          </a>
+        </FlexWrapper>
         <Divider />
         <Tabs
           value={value}
